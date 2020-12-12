@@ -1,0 +1,15 @@
+#p1 {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#p1>p {
+    padding-right: 10px;
+}
+
+#p2 {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}

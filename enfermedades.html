@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="./css/enfer.css">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!--Import jQuery Library-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!--Import materialize.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.tap-target');
+      var instances = M.TapTarget.init(elems, options);
+    });
+  </script>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+
+<!-- inclui muchas librerias ya que no me funcionan con la version actual de materialize, aun asi presenta conflictos pra integrarlas con boostrap.
+     la estructura de la pagina es un sidenav hecho con boostrap combinado con un tab de materialize, pero algunos efectos se ven conflicto por el uso de 
+     los 2 framworks, los 2 eventos de materialize son el uso de tab y un  FeatureDiscovery que abre un globo en la parte de abajo con u texto.   
+-->
+<body>
+
+
+  <header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+
+        <a class="navbar-brand" href="index.html">
+            <img src="./img/psilogo.png" width="120" height="50" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse " id="menu">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ramas de la Psicología
+        </a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="psiedu.html">Psicología Educativa</a>
+                        <a class="dropdown-item" href="psisoc.html">Psicología Social</a>
+                        <a class="dropdown-item" href="psisal.html">Psicología de la Salud</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="enfermedades.html">Enfermedades <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+<br>
+
+
+
+<!--
+  side nav de boostrap
+-->
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-3">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active bg-dark" id="v-pills-tab1-tab" data-toggle="pill" href="#v-pills-tab1" role="tab"
+            aria-controls="v-pills-tab1" aria-selected="true">Depresión</a>
+          <a class="nav-link bg-dark" id="v-pills-tab2-tab" data-toggle="pill" href="#v-pills-tab2" role="tab"
+            aria-controls="v-pills-tab2" aria-selected="false">Ansiedad</a>
+          <a class="nav-link bg-dark" id="v-pills-tab3-tab" data-toggle="pill" href="#v-pills-tab3" role="tab"
+            aria-controls="v-pills-tab3" aria-selected="false">Fobias</a>
+          <a class="nav-link bg-dark" id="v-pills-tab4-tab" data-toggle="pill" href="#v-pills-tab4" role="tab"
+            aria-controls="v-pills-tab4" aria-selected="false">Alzheimer</a>
+          <a class="nav-link bg-dark" id="v-pills-tab5-tab" data-toggle="pill" href="#v-pills-tab5" role="tab"
+            aria-controls="v-pills-tab5" aria-selected="false">Trastorno obsesivo-compulsivo</a>
+        </div>
+      </div>
+
+      <!--
+        desde aqui se despliega todo el tab de materialize asi como los estilos que tienen cada uno
+      -->
+      <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel" aria-labelledby="v-pills-home-tab1">
+
+            <ul id="tabs-swipe-demo1" class="tabs bg-dark">
+              <li class="tab col s3"><a class="active" href="#test-swipe-1">Definición</a></li>
+              <li class="tab col s3"><a class="blue-text" href="#test-swipe-2">Causas</a></li>
+              <li class="tab col s3"><a class="green-text" href="#test-swipe-3">Sintomas</a></li>
+              <li class="tab col s3"><a class="yellow-text" href="#test-swipe-4">Tratamiento</a></li>
+            </ul>
+
+            <div id="test-swipe-1" class="col s12 red lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify"> La depresión es una enfermedad mental grave y, además, común. De hecho, más de 300 millones de
+                personas
+                la sufren con una severidad mayor o menor. No tiene nada que ver con “estar triste” durante unos días,
+                pues los sentimientos que experimenta una persona con depresión son mucho más profundos e interfieren en
+                el desempeño de las actividades diarias.</p>
+             <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/depre1.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-2" class="col s12 blue lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Las causas que llevan a sufrir este trastorno del cerebro son muy complejas, incluyendo la genética de
+                la
+                persona, además de factores biológicos, sociales, económicos, ambientales y psicológicos. Puede aparecer
+                a
+                cualquier edad, siendo las mujeres las principales afectadas.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/depre2.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-3" class="col s12 green lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Los síntomas más frecuentes de la depresión son los siguientes: tristeza y vacío emocional, insomnio (en
+                algunos casos dormir más de lo normal), pérdida de interés por realizar actividades, pérdida de apetito
+                (en algunos casos aumento), dolor de cabeza, cansancio, irritabilidad, sentimientos de culpa, pérdida de
+                esperanza… Pueden llegar incluso ideas de suicidio.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/depre3.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-4" class="col s12 yellow lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                El ambiente que rodea a una persona que sufre depresión es fundamental para lograr su rehabilitación. La
+                comprensión y el cariño de los familiares y allegados es importante, como lo es la paciencia, puesto que
+                la falta de ganas y motivación de los enfermos puede provocar la desesperación. Sugerir y no ordenar
+                actividades, proponer y no imponer conversaciones son apoyos básicos a la terapia impuesta por los
+                profesionales. Uno de los problemas más importantes que presenta este grupo es el abandono de las
+                terapias, por lo que es fundamental inducirle a seguir el tratamiento hasta el final.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/depre4.jpg">
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-tab2" role="tabpanel" aria-labelledby="v-pills-tab2-tab">
+
+            <ul id="tabs-swipe-demo2" class="tabs bg-dark">
+              <li class="tab col s3"><a class="active" href="#test-swipe-12"> Definición</a></li>
+              <li class="tab col s3"><a class="blue-text" href="#test-swipe-22">Causas</a></li>
+              <li class="tab col s3"><a class="green-text" href="#test-swipe-32">Sintomas</a></li>
+              <li class="tab col s3"><a class="yellow-text" href="#test-swipe-42">Tratamiento</a></li>
+            </ul>
+            <div id="test-swipe-12" class="col s12 red lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                La ansiedad es una enfermedad mental en la que los afectados experimentan preocupaciones y miedos muy
+                intensos ante situaciones diarias, algo que puede derivar en ataques de pánico y que acaba afectando a
+                la vida diaria de la persona.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/ansi1.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-22" class="col s12 blue lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Las causas no están demasiado claras, aunque se cree que hay personas con mayor tendencia genética a
+                sufrir este trastorno, el cual se despierta ante la vivencia de sucesos traumáticos o al pasar por
+                experiencias dolorosas.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/ansi2.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-32" class="col s12 green lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Los síntomas más frecuentes de la ansiedad son los siguientes y se despiertan ante situaciones que no
+                tienen por qué suponer un peligro real: nerviosismo, agitación, tensión, hiperventilación, presión en
+                el pecho, aumento del ritmo cardíaco, temblores, sudoración, problemas gastrointestinales, debilidad,
+                cansancio, etc.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/ansi3.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-42" class="col s12 yellow lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Los trastornos de ansiedad se tratan con tratamiento facmacológico junto con terapia psicológica
+                cognitivo-conductual. <br><br>
+
+                Tratamiento farmacológico <br>
+                Se emplean, fundamentalmente, benzodiacepinas y ansiolíticos, que en todos los casos son fármacos de
+                prescripción médica.<br><br>
+
+                Tratamiento psicológico<br>
+                Mediante la terapia cognitivo-conductual, el terapeuta enseña al paciente a manejar la ansiedad y a
+                controlar los miedos, cuestionando su carácter irracional y sustituyéndolo por formas de pensar más
+                racionales.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/ansi4.jpg">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="tab-pane fade" id="v-pills-tab3" role="tabpanel" aria-labelledby="v-pills-tab3-tab">
+            <ul id="tabs-swipe-demo3" class="tabs bg-dark">
+              <li class="tab col s3"><a class="active" href="#test-swipe-13">Definición</a></li>
+              <li class="tab col s3"><a class="blue-text" href="#test-swipe-23">Causas</a></li>
+              <li class="tab col s3"><a class="green-text" href="#test-swipe-33">Sintomas</a></li>
+              <li class="tab col s3"><a class="yellow-text" href="#test-swipe-43">Tratamiento</a></li>
+            </ul>
+            <div id="test-swipe-13" class="col s12 red lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Una fobia es una enfermedad mental relacionada con la ansiedad en la que se experimenta un temor muy
+                fuerte e irracional ante algo que no representa ningún (o muy bajo) peligro real para la persona.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/fob1.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-23" class="col s12 blue lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Pese a que sus causas no están demasiado claras, existen muchas fobias distintas: a los espacios
+                abiertos, a los insectos, a los espacios cerrados, a las alturas, a volar...
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/fob2.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-33" class="col s12 green lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Aquellas personas con fobia evitan exponerse a aquello que les genera miedo, pero cuando deben
+                afrontarse
+                a ello experimentan los siguientes síntomas: pánico, miedo, temor, aumento del ritmo cardíaco, deseo
+                irrefrenable de huir, falta de aire, temblores, sudoración, etc.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/fob3.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-43" class="col s12 yellow lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                La terapia de conducta es uno de los tratamientos más efectivos para las fobias, en ocasiones puede ser
+                preciso combinarlo con tratamiento psicofarmacológico para disminuir los síntomas físicos que acompañan
+                a la fobia y ayudar así a la persona a afrontar la situación. <br> <br>
+
+                El tratamiento psicoterapéutico consiste en: <br> <br>
+
+                Exposición progresiva a los estímulos fóbicos. <br>
+                Entrenamiento en técnicas de manejo de ansiedad. <br>
+                Reestructuración cognitiva orientada a combatir las ideas catastróficas que puedan presentar estas
+                personas.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/fob4.jpg">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="tab-pane fade" id="v-pills-tab4" role="tabpanel" aria-labelledby="v-pills-tab4-tab">
+            <ul id="tabs-swipe-demo4" class="tabs bg-dark">
+              <li class="tab col s3"><a class="active" href="#test-swipe-14"> Definición</a></li>
+              <li class="tab col s3"><a class="blue-text" href="#test-swipe-24">Causas </a></li>
+              <li class="tab col s3"><a class="green-text" href="#test-swipe-34">Sintomas</a></li>
+              <li class="tab col s3"><a class="yellow-text" href="#test-swipe-44">Tratamiento </a></li>
+            </ul>
+            <div id="test-swipe-14" class="col s12 red lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                El alzheimer es una enfermedad mental y es la principal causa de demencia en el mundo. Está
+                caracterizada
+                por una degeneración progresiva de las neuronas del cerebro, que lentamente van deteriorándose hasta
+                morir.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/alz1.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-24" class="col s12 blue lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Las causas no están demasiado claras. Suele afectar a personas mayores de 65 años y provoca una
+                disminución lenta pero continua de la capacidad mental, haciendo que la persona vaya perdiendo las
+                habilidades sociales y aptitudes hasta el punto de no poder vivir de forma independiente.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/alz2.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-34" class="col s12 green lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Con el tiempo, aparece un deterioro grave de la memoria y, ya en etapas avanzadas de la enfermedad,
+                acaba
+                provocando la muerte de la persona debido al daño cerebral.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/alz3.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-44" class="col s12 yellow lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                No existe cura, aunque los medicamentos alivian los síntomas de forma temporal y ralentizan en la medida
+                de lo posible el avance de la enfermedad para que la persona mantenga la independencia el mayor tiempo
+                posible.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/alz4.jpg">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="tab-pane fade" id="v-pills-tab5" role="tabpanel" aria-labelledby="v-pills-tab5-tab">
+            <ul id="tabs-swipe-demo5" class="tabs bg-dark">
+              <li class="tab col s3"><a class="active" href="#test-swipe-15">Definición</a></li>
+              <li class="tab col s3"><a class="blue-text" href="#test-swipe-25">Causas</a></li>
+              <li class="tab col s3"><a class="green-text" href="#test-swipe-35">Sintomas</a></li>
+              <li class="tab col s3"><a class="yellow-text" href="#test-swipe-45">Tratamiento</a></li>
+            </ul>
+            <div id="test-swipe-15" class="col s12 red lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                El trastorno obsesivo-compulsivo (TOC) es un trastorno mental en el cual las personas tienen
+                pensamientos,
+                sentimientos, ideas, sensaciones (obsesiones) y comportamientos repetitivos e indeseables que los
+                impulsan
+                a hacer algo una y otra vez (compulsiones).
+
+                Con frecuencia, la persona se comporta de cierta manera para librarse de los pensamientos obsesivos,
+                pero
+                esto solo brinda alivio a corto plazo. No llevar a cabo los rituales obsesivos puede causar una enorme
+                ansiedad y sufrimiento.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/toc1.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-25" class="col s12 blue lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Los proveedores de atención médica no conocen la causa exacta del TOC. Los factores que pueden influir
+                incluyen lesiones en la cabeza, infecciones y funcionamiento anormal en ciertas zonas del cerebro. Los
+                genes (antecedentes familiares) parecen jugar un fuerte papel. Los antecedentes de abuso físico o sexual
+                también parecen incrementar el riesgo de TOC.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/toc2.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-35" class="col s12 green lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                Algunos ejemplos son:<br>
+
+                Miedo excesivo a los microbios<br>
+                Pensamientos prohibidos relacionados con el sexo, la religión, o sobre dañar a otros o a sí mismos<br>
+                La necesidad de que exista orden<br>
+                Verificar una y otra vez las acciones (como apagar las luces y cerrar la puerta)<br>
+                Conteo excesivo<br>
+                Ordenar las cosas de una cierta manera<br>
+                Lavarse las manos repetidas veces para evitar una infección<br>
+                Repetir las palabras en silencio<br>
+                Rezar en silencio una y otra vez
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/toc3.jpg">
+              </div>
+            </div>
+            <div id="test-swipe-45" class="col s12 yellow lighten-4" style="height: 600px;">
+              <p class="d-flex justify-content-around text-justify">
+                El TOC se trata utilizando una combinación de medicamentos y terapia conductual. Los medicamentos
+                empleados incluyen antidepresivos, antipsicóticos y estabilizadores del estado de
+                ánimo.<br>
+
+                La psicoterapia (terapia cognitiva conductual o TCC) ha demostrado ser efectiva para este trastorno.
+                Durante la terapia, la persona es expuesta muchas veces a una situación que desencadena los pensamientos
+                obsesivos y aprende gradualmente a tolerar la ansiedad y resistir las ganas de llevar a cabo el acto
+                compulsivo. La terapia también se puede utilizar para reducir el estrés y la ansiedad, y resolver
+                conflictos internos.
+              </p>
+              <div class="container">
+                <img class="img-fluid" width="500" height="300" src="./img/toc4.jpg">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+
+
+
+
+      <!-- Element Showed -->
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a id="botonayuda" class="btn btn-floating btn-large cyan" onclick="$('.tap-target').tapTarget('open')"><i
+            class="material-icons">?</i></a>
+      </div>
+
+      <!-- Start Tap Target Structure -->
+      <div class="tap-target blue" data-activates="botonayuda">
+        <div class="tap-target-content white-text">
+          <h5>Contactar con un profesional</h5>
+          <p>Si presentas algunos de estos casos no dudes en contactar con uno de nuestro profesionales.</p>
+        </div>
+      </div>
+      <!-- End Tap Target Structure -->
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <footer class="container bg-dark">
+
+      <h4 class=" text-center text-light"> Síguenos en nuestras redes sociales: </h4>
+<div class="container">
+      <div class="row justify-content-md-center">
+          <a href="https://www.facebook.com"> <img class="imgpie" src="./img/red1.png" alt="facebook" width="50" height="50"></a>
+          <a href="https://www.twitter.com"> <img class="imgpie" src="./img/red2.png" alt="twitter" width="50" height="50"></a>
+          <a href="https://www.instagram.com"> <img class="imgpie" src="./img/red3.png" alt="instagram" width="50" height="50"></a>
+          <a href="https://www.whatsapp.com"> <img class="imgpie" src="./img/red4.png" alt="whatsapp" width="50" height="50"></a>
+
+      </div>
+    </div>
+      <br>
+      <p class="text-center text-light"> Autor: Yeison Andres Ospino Diaz</p>
+  </footer>
+</body>
+
+</html>
